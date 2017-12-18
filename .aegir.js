@@ -1,6 +1,6 @@
 'use strict'
 
-const ipfsdFactory = require('ipfsd-ctl')
+const DaemonFactory = require('ipfsd-ctl')
 
 const parallel = require('async/parallel')
 const ads = require('./test/utils/another-daemon-spawner')
@@ -42,8 +42,8 @@ module.exports = {
       post: stop,
     },
     browser: {
-      pre: ipfsdFactory.server.start,
-      post: ipfsdFactory.server.stop
+      pre: DaemonFactory.server.start,
+      post: DaemonFactory.server.stop
     }
   }
 }
